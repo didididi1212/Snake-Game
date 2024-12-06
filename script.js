@@ -88,10 +88,10 @@ class Snake {
     
     generateFood (){
         let row, col; 
-        do {
+        do {  
           row = Math.floor(Math.random() * this.rows)+1;
           col = Math.floor(Math.random() * this.cols)+1;
-        } while (this.snake.some(segment => segment[0] === row && segment[1] === col));
+        } while (this.snake.some(segment => segment[0] === row && segment[1] === col)||(row==0 || row>this.rows) || (col == 0 || col>this.cols));
         
         this.food = [row,col]
     }
@@ -109,7 +109,7 @@ class Snake {
                     return;
                 }
               
-                console.log(this.food)
+                // console.log(this.food)
 
 
                 if (!this.food[0] && !this.food[1]) {
