@@ -91,7 +91,9 @@ class Snake {
         do {  
           row = Math.floor(Math.random() * this.rows)+1;
           col = Math.floor(Math.random() * this.cols)+1;
+
         } while (this.snake.some(segment => segment[0] === row && segment[1] === col)||(row==0 || row>=this.rows) || (col == 0 || col>=this.cols));
+
         
         this.food = [row,col]
     }
